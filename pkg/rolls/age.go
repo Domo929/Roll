@@ -25,12 +25,7 @@ func ageGen(args []string) error {
 	}
 	stuntPoints := dies[0] == dies[1] || dies[0] == dies[2] || dies[1] == dies[2]
 
-	dieValsStr := fmt.Sprint(dies[0])
-	for i := 1; i < len(dies); i++ {
-		dieValsStr += fmt.Sprintf(" %d", dies[i])
-	}
-	fmt.Printf("Dies: %s*\n", dieValsStr)
-
+	fmt.Printf("Dies: %d %d *%d*\n", dies[0], dies[1], dies[2])
 	if negative {
 		sum -= modVal
 		fmt.Printf("Modifier: -%d\n", modVal)
@@ -42,6 +37,9 @@ func ageGen(args []string) error {
 	fmt.Println("Total: ", sum)
 	if stuntPoints {
 		fmt.Printf("Generated %d stunt points\n", dies[2])
+	}
+	if dies[2] == 6 {
+		fmt.Println("Rolled a 6 on your drama die")
 	}
 
 	return nil
