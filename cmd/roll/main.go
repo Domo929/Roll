@@ -6,7 +6,7 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/domo929/roll.git/pkg/rolls"
+	"github.com/Domo929/roll/pkg/rolls"
 )
 
 func main() {
